@@ -7,16 +7,18 @@ export const metadata: Metadata = {
     'Halaman konfirmasi pendaftaran anggota JOIN SLD. Anda telah berhasil mendaftar dan dapat bergabung dengan grup Telegram melalui tautan yang tersedia.',
 };
 
-interface PageProps {
+type SuccessPageProps = {
   params: {
     fullName: string;
     nip: string;
     upt: string;
     whatsappNumber: string;
   };
-}
+};
 
-export default function SuccessPage({ params }: PageProps) {
+export default function SuccessPage({
+  params,
+}: SuccessPageProps) {
   const { fullName, nip, upt, whatsappNumber } = params;
   const telegramLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK;
 
