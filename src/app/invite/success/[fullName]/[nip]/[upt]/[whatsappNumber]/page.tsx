@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -7,16 +7,16 @@ export const metadata: Metadata = {
     'Halaman konfirmasi pendaftaran anggota JOIN SLD. Anda telah berhasil mendaftar dan dapat bergabung dengan grup Telegram melalui tautan yang tersedia.',
 };
 
-export default function SuccessPage({
-  params,
-}: {
+interface PageProps {
   params: {
     fullName: string;
     nip: string;
     upt: string;
     whatsappNumber: string;
   };
-}) {
+}
+
+export default function SuccessPage({ params }: PageProps) {
   const { fullName, nip, upt, whatsappNumber } = params;
   const telegramLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK;
 
