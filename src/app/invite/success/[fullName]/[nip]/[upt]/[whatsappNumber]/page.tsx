@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MemberData } from '@/types/MemberTypes';
 
 export const metadata: Metadata = {
   title: 'Pendaftaran Berhasil',
@@ -9,10 +8,16 @@ export const metadata: Metadata = {
 };
 
 export default function SuccessPage({
-  searchParams,
+  params,
 }: {
-  searchParams: Partial<MemberData>;
+  params: {
+    fullName: string;
+    nip: string;
+    upt: string;
+    whatsappNumber: string;
+  };
 }) {
+  const { fullName, nip, upt, whatsappNumber } = params;
   const telegramLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK;
 
   return (
@@ -51,19 +56,19 @@ export default function SuccessPage({
                     <tbody>
                       <tr>
                         <td className="font-medium py-2">Nama Lengkap</td>
-                        <td>{searchParams.fullName || '-'}</td>
+                        <td>{fullName || '-'}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">NIP</td>
-                        <td>{searchParams.nip || '-'}</td>
+                        <td>{nip || '-'}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Unit Pelaksana Teknis</td>
-                        <td>{searchParams.upt || '-'}</td>
+                        <td>{upt || '-'}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Nomor WhatsApp</td>
-                        <td>{searchParams.whatsappNumber || '-'}</td>
+                        <td>{whatsappNumber || '-'}</td>
                       </tr>
                     </tbody>
                   </table>

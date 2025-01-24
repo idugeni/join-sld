@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - JOIN SLD',
-    default: 'JOIN SLD ! Telegram Group Invite',
+    template: '%s | JOIN SLD',
+    default: 'JOIN SLD - Telegram Group Invite',
   },
   description:
     'Gabung ke komunitas eksklusif kami di Telegram! Dapatkan informasi terkini, berbagi wawasan, dan koneksi dengan anggota lain melalui proses pendaftaran yang mudah, cepat, dan aman.',
