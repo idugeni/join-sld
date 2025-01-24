@@ -16,7 +16,12 @@ export default async function SuccessPage(props: {
   }>;
 }) {
   const params = await props.params;
-  const { fullName, nip, upt, whatsappNumber } = params;
+
+  const fullName = decodeURIComponent(params.fullName);
+  const nip = decodeURIComponent(params.nip);
+  const upt = decodeURIComponent(params.upt);
+  const whatsappNumber = decodeURIComponent(params.whatsappNumber);
+
   const telegramLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK;
 
   return (
