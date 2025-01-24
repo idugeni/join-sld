@@ -7,16 +7,19 @@ export const metadata: Metadata = {
     'Halaman konfirmasi pendaftaran anggota JOIN SLD. Anda telah berhasil mendaftar dan dapat bergabung dengan grup Telegram melalui tautan yang tersedia.',
 };
 
+interface SearchParams {
+  name?: string;
+  nip?: string;
+  upt?: string;
+  wa?: string;
+}
+
 export default function SuccessPage({
-  searchParams,
+  searchParams = {},
 }: {
-  searchParams: {
-    name?: string;
-    nip?: string;
-    upt?: string;
-    wa?: string;
-  };
+  searchParams: SearchParams;
 }) {
+  const { name = '-', nip = '-', upt = '-', wa = '-' } = searchParams;
   const telegramLink = process.env.NEXT_PUBLIC_TELEGRAM_LINK;
 
   return (
@@ -60,21 +63,21 @@ export default function SuccessPage({
                     <tbody>
                       <tr>
                         <td className='font-medium py-2'>Nama Lengkap</td>
-                        <td>{searchParams.name}</td>
+                        <td>{name}</td>
                       </tr>
                       <tr>
                         <td className='font-medium py-2'>NIP</td>
-                        <td>{searchParams.nip}</td>
+                        <td>{nip}</td>
                       </tr>
                       <tr>
                         <td className='font-medium py-2'>
                           Unit Pelaksana Teknis
                         </td>
-                        <td>{searchParams.upt}</td>
+                        <td>{upt}</td>
                       </tr>
                       <tr>
                         <td className='font-medium py-2'>Nomor WhatsApp</td>
-                        <td>{searchParams.wa}</td>
+                        <td>{wa}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -102,7 +105,7 @@ export default function SuccessPage({
               </div>
 
               <div className='card-actions justify-center mt-6 transition-all duration-300'>
-                {telegramLink && (
+                {telegramLink ? (
                   <Link
                     href={telegramLink}
                     className='btn btn-primary btn-wide transition-all duration-300'
@@ -110,6 +113,10 @@ export default function SuccessPage({
                   >
                     Bergabung ke Telegram
                   </Link>
+                ) : (
+                  <span className='text-gray-500'>
+                    Tautan grup Telegram tidak tersedia.
+                  </span>
                 )}
               </div>
             </div>
