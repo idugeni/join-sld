@@ -1,6 +1,6 @@
-# Telegram Group Management
+# JOIN SLD
 
-**Telegram Group Management** adalah aplikasi berbasis web yang dirancang untuk memudahkan pengelolaan anggota dalam grup Telegram. Aplikasi ini memiliki fitur pendaftaran yang memungkinkan verifikasi anggota menggunakan Nomor Induk Pegawai (NIP) dan otomatisasi undangan ke grup Telegram. Solusi ini cocok digunakan oleh organisasi atau instansi yang memerlukan sistem validasi identitas secara otomatis dan pengelolaan anggota secara efisien.
+**JOIN SLD** adalah aplikasi berbasis web yang dirancang untuk memudahkan pengelolaan anggota dalam grup Telegram. Aplikasi ini memiliki fitur pendaftaran yang memungkinkan verifikasi anggota menggunakan Nomor Induk Pegawai (NIP) dan otomatisasi undangan ke grup Telegram. Solusi ini cocok digunakan oleh organisasi atau instansi yang memerlukan sistem validasi identitas secara otomatis dan pengelolaan anggota secara efisien.
 
 Dengan menggunakan teknologi terkini dan fitur-fitur canggih, proyek ini bertujuan untuk memberikan kemudahan dalam mengelola keanggotaan, memastikan keamanan data anggota, serta memberikan pengalaman pengguna yang mulus dan responsif. Setiap langkah dalam aplikasi ini dirancang untuk memberikan kenyamanan bagi administrator grup dalam melakukan verifikasi anggota dan pengelolaan grup Telegram mereka.
 
